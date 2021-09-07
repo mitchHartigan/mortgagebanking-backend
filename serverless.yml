@@ -1,0 +1,7 @@
+org: modjeska
+app: big-wave-server
+component: express
+name: big-wave-server
+
+inputs:
+  src: ./
