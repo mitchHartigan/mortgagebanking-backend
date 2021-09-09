@@ -27,6 +27,28 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+_findDestination = (message) => {
+  if (message === "Compliance Workshops") {
+    return "official3173@gmail.com";
+  }
+  if (message === "Research Projects") {
+    return "mitch.hartigan@gmail.com";
+  }
+  if (message === "Shared Conversations") {
+    return "mortgagebanking.server@gmail.com";
+  }
+};
+
+_parseMessage = (message) => {
+  if (
+    message === "Compliance Workshops" ||
+    message === "Research Projects" ||
+    message === "Shared Conversations"
+  ) {
+    return `Hey! I'm interested in the ${message} and I'd like some more information.`;
+  }
+};
+
 app.get("/", (req, res) => {
   res.send("Mortgage banking email server is up.");
   res.end();
@@ -35,17 +57,17 @@ app.get("/", (req, res) => {
 app.post("/contact", (req, res) => {
   const { name, email, phone, message } = req.body;
 
-  if (name && email && phone) {
+  if (name && email && phone && message) {
     const mailOptions = {
       from: "mortgagebanking.server@gmail.com",
-      to: "mitch.hartigan@gmail.com",
+      to: _findDestination(message),
       subject:
         "[mortgagebanking.law Automated Message] - New message from contact form.",
       html: `
         <h4>Name: ${name}</h4>
         <h4>Email: ${email}</h4>
         <h4>Phone: ${phone}</h4>
-        <h4>Message:</h4> <p>${message}</p>
+        <h4>Message:</h4> <p>${_parseMessage(message)}</p>
         <br></br>
         <p>(This message was generated automatically from the contact form on mortgagebanking.law)`,
     };
