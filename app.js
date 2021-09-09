@@ -27,7 +27,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-_findDestination = (message) => {
+const _findDestination = (message) => {
   if (message === "Compliance Workshops") {
     return "official3173@gmail.com";
   }
@@ -39,7 +39,7 @@ _findDestination = (message) => {
   }
 };
 
-_parseMessage = (message) => {
+const _parseMessage = (message) => {
   if (
     message === "Compliance Workshops" ||
     message === "Research Projects" ||
