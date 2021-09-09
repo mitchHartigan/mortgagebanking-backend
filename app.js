@@ -45,7 +45,7 @@ const _parseMessage = (message) => {
     message === "Research Projects" ||
     message === "Shared Conversations"
   ) {
-    return `Hey! I'm interested in the ${message} and I'd like some more information.`;
+    return `Hey! I'm interested in the ${message} initiative and I'd like some more information.`;
   }
 };
 
