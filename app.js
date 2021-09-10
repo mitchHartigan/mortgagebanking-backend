@@ -48,6 +48,8 @@ const _parseMessage = (message) => {
     message === "Shared Conversations"
   ) {
     return `Hey! I'm interested in the ${message} initiative and I'd like some more information.`;
+  } else {
+    return message;
   }
 };
 
