@@ -36,6 +36,8 @@ const _findDestination = (message) => {
   }
   if (message === "Shared Conversations") {
     return "mortgagebanking.server@gmail.com";
+  } else {
+    return "mitch.hartigan@gmail.com";
   }
 };
 
