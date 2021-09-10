@@ -29,15 +29,15 @@ const transporter = nodemailer.createTransport({
 
 const _findDestination = (message) => {
   if (message === "Compliance Workshops") {
-    return "official3173@gmail.com";
+    return "workshops@mortgagebanking.law";
   }
   if (message === "Research Projects") {
-    return "mitch.hartigan@gmail.com";
+    return "projects@mortgagebanking.law";
   }
   if (message === "Shared Conversations") {
-    return "mortgagebanking.server@gmail.com";
+    return "conversations@mortgagebanking.law";
   } else {
-    return "mitch.hartigan@gmail.com";
+    return "info@mortgagebanking.law";
   }
 };
 
